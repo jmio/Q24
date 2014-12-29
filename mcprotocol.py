@@ -84,7 +84,7 @@ def mcpRead(host,port,addr,datalen,datatype="D") :
 		result.append(databyte)
 	return result
 
-
-mcpWrite("192.168.1.171",5010,1000,[1,2,3,5])
-res = mcpRead("192.168.1.171",5010,1000,4)
-print res
+if __name__=='__main__':
+	mcpWrite("192.168.1.171",5010,1000,[41,2,3,5])
+	res = mcpRead("192.168.1.171",5010,1000,4)
+	print res
