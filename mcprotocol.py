@@ -21,7 +21,7 @@ def sendandrecv(host,port,data,minlen=1):
 	return data
 
 def mcpWrite(host,port,addr,data,datatype="D") :
-	datalen = len(data) * 2
+	datalen = len(data) * 2 + 0x0C
 	#.             0,   1,   2,   3,   4,   5,   6,   7,   8,   9,  10,  11,  12,  13,  14,  15,
 	cmdBytes = [0x50,0x00,0x00,0xFF,0xFF,0x03,0x00,0x0C,0x00,0x10,0x00,0x01,0x14,0x00,0x00]
 	# Set Data Length
