@@ -45,7 +45,7 @@ def mcpWrite(host,port,addr,data,datatype="D") :
 		mask = 0xFF
 		for j in xrange(wordlen) :
 			cmdBytes.append(i & mask)
-			mask = mask << 8
+			i = i >> 8
 	#
 	d = sendandrecv(host,port,cmdBytes,minlen=1)
 	if (len(d) < 11) :
