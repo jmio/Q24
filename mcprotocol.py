@@ -76,8 +76,8 @@ def mcpWrite(host,port,addr,data,datatype="D") :
 	wordlen = DEVICECODE[datatype][1]
 	cmdBytes.append(DEVICECODE[datatype][0])
 	# Length
-	cmdBytes.append((datalen & 0x0000FF) >> 0)
-	cmdBytes.append((datalen & 0x00FF00) >> 8)
+	cmdBytes.append((len(data) & 0x0000FF) >> 0)
+	cmdBytes.append((len(data) & 0x00FF00) >> 8)
 	for i in data :
 		mask = 0xFF
 		for j in xrange(wordlen) :
